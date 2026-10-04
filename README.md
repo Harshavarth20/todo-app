@@ -29,3 +29,14 @@ In development, open http://localhost:3000/letter_opener to view emails generate
 ## Database
 
 Development uses SQLite at `storage/development.sqlite3`. The database file is not included in the submission; Rails creates it from the migrations when the app starts.
+
+
+
+
+RESULTS :-
+<img width="1917" height="1132" alt="image" src="https://github.com/user-attachments/assets/99ea5e14-3c60-4201-bd0d-3bda304caba2" />
+<img width="1917" height="1135" alt="image" src="https://github.com/user-attachments/assets/5a332b0d-0297-470e-9482-85926ed7210d" />
+<img width="1917" height="1131" alt="image" src="https://github.com/user-attachments/assets/3b5fbf6c-74c6-4bb9-8eb7-1730536efc67" />
+<img width="1917" height="1133" alt="image" src="https://github.com/user-attachments/assets/0a4a7e15-661c-4ae8-be00-169baca0a1aa" />
+<img width="1917" height="1128" alt="image" src="https://github.com/user-attachments/assets/07f7fc60-b5ee-433c-a594-1f96ce31910c" />
+
