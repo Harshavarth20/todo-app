@@ -1,0 +1,31 @@
+<div style="display: flex; flex-direction: column; gap: 18px;">
+  <% if @todo.errors.any? %>
+    <div style="background: #fee2e2; color: #991b1b; padding: 12px; border-radius: 8px;">
+      <% @todo.errors.full_messages.each do |message| %>
+        <p><%= message %></p>
+      <% end %>
+    </div>
+  <% end %>
+
+  <%= form_with model: @todo do |form| %>
+    <div style="margin-bottom: 18px;">
+      <%= form.label :title, "Task title" %><br>
+      <%= form.text_field :title, required: true, placeholder: "What do you need to do?", style: "width: 100%; box-sizing: border-box; padding: 12px; margin-top: 8px; border: 1px solid #ccc; border-radius: 8px;" %>
+    </div>
+
+    <div style="margin-bottom: 18px;">
+      <%= form.label :description, "Description" %><br>
+      <%= form.text_area :description, rows: 4, placeholder: "Add more details (optional)", style: "width: 100%; box-sizing: border-box; padding: 12px; margin-top: 8px; border: 1px solid #ccc; border-radius: 8px;" %>
+    </div>
+
+    <div style="margin-bottom: 18px;">
+      <%= form.label :completed do %>
+        <%= form.check_box :completed %>
+        Mark as completed
+      <% end %>
+    </div>
+
+    <%= form.submit style: "background: #2563eb; color: white; border: none; padding: 12px 20px; border-radius: 8px; cursor: pointer;" %>
+    <%= link_to "Cancel", todos_path, style: "margin-left: 12px;" %>
+  <% end %>
+</div>

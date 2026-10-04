@@ -1,0 +1,40 @@
+
+<div class="auth-container">
+  <div class="auth-card">
+    <h1>Create your account</h1>
+    <p class="auth-subtitle">Start organizing your day.</p>
+
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      <% if resource.errors.any? %>
+        <div class="auth-errors">
+          <%= resource.errors.full_messages.to_sentence %>
+        </div>
+      <% end %>
+
+      <div class="auth-field">
+        <%= f.label :email %>
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "you@example.com" %>
+      </div>
+
+      <div class="auth-field">
+        <%= f.label :password %>
+        <%= f.password_field :password, autocomplete: "new-password", placeholder: "Create a password" %>
+        <% if @minimum_password_length %>
+          <small><%= @minimum_password_length %> characters minimum</small>
+        <% end %>
+      </div>
+
+      <div class="auth-field">
+        <%= f.label :password_confirmation, "Confirm password" %>
+        <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "Repeat your password" %>
+      </div>
+
+      <%= f.submit "Create account", class: "auth-submit" %>
+    <% end %>
+
+    <div class="auth-links">
+      Already have an account?
+      <%= link_to "Sign in", new_session_path(resource_name) %>
+    </div>
+  </div>
+</div>

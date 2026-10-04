@@ -1,0 +1,33 @@
+
+<div class="auth-container">
+  <div class="auth-card">
+    <h1>Reset your password</h1>
+    <p class="auth-subtitle">Choose a new password for your account.</p>
+
+    <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
+      <% if resource.errors.any? %>
+        <div class="auth-errors">
+          <%= resource.errors.full_messages.to_sentence %>
+        </div>
+      <% end %>
+
+      <%= f.hidden_field :reset_password_token %>
+
+      <div class="auth-field">
+        <%= f.label :password, "New password" %>
+        <%= f.password_field :password, autocomplete: "new-password", placeholder: "Enter new password" %>
+      </div>
+
+      <div class="auth-field">
+        <%= f.label :password_confirmation, "Confirm new password" %>
+        <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "Repeat new password" %>
+      </div>
+
+      <%= f.submit "Reset password", class: "auth-submit" %>
+    <% end %>
+
+    <div class="auth-links">
+      <%= link_to "Back to sign in", new_session_path(resource_name) %>
+    </div>
+  </div>
+</div>
